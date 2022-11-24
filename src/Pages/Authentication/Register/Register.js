@@ -1,25 +1,41 @@
-import { React , useContext } from 'react';
+import { React, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import registerImg from '../../../assets/login@4x.png'
 import { AuthContext } from '../../../contexts/Authprovider/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const {user , googleSignIn } = useContext(AuthContext)
+    const { user, googleSignIn, createUser, updateUser } = useContext(AuthContext)
     const navigate = useNavigate();
     const handleRegister = data => {
         console.log(data);
-        
+        createUser(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                toast.success('User created Successfully')
+                console.log(user);
+                const userInfo = {
+                    displayName: data.name
+                }
+                updateUser(userInfo)
+                    .then(() => {
+                        
+                    })
+                    .catch(e => console.error(e))
+            })
+            .catch(e => console.error(e))
+
     }
 
     const handleGoogleSignIn = () => {
         googleSignIn()
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(e => console.error(e))
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(e => console.error(e))
     }
 
 
