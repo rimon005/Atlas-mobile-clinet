@@ -1,16 +1,26 @@
-import { React } from 'react';
+import { React , useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import registerImg from '../../../assets/login@4x.png'
+import { AuthContext } from '../../../contexts/Authprovider/AuthProvider';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const {user , googleSignIn } = useContext(AuthContext)
     const navigate = useNavigate();
     const handleRegister = data => {
         console.log(data);
         
     }
 
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(e => console.error(e))
+    }
 
 
 
@@ -38,6 +48,8 @@ const Register = () => {
                         <div>
                             <p className='text-center  my-3'>Already have an account <Link to='/login' className='text-secondary font-medium'>login</Link></p>
                         </div>
+                        <div className="divider my-3">OR</div>
+                        <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
                     </form>
                 </div>
             </div>
