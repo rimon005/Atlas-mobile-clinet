@@ -1,7 +1,7 @@
 import { React } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-import loginImg from '../../../assets/login@4x.png'
+import registerImg from '../../../assets/login@4x.png'
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -18,7 +18,7 @@ const Register = () => {
         <div className="hero my-16">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="text-center lg:text-left flex justify-center items-center">
-                    <img src={loginImg} alt="" className='lg:w-1/2' />
+                    <img src={registerImg} alt="" className='lg:w-1/2' />
                 </div>
                 <div className="card rounded-none flex-shrink-0 w-full max-w-sm shadow-2xl">
                     <form onSubmit={handleSubmit(handleRegister)} className="card-body">
