@@ -1,14 +1,33 @@
 import { useForm } from "react-hook-form";
 import loginImg from '../../../assets/login@4x.png'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { AuthContext } from "../../../contexts/Authprovider/AuthProvider";
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
+    const { user, googleSignIn , loginUser} =  useContext(AuthContext)
 
     const handleLogin = data => {
-        console.log(data)
+        // console.log(data)
+        loginUser(data.email , data.password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(e => console.error(e))
     }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(e => console.error(e))
+    }
+
 
     return (
         <div className='h-[800px] flex justify-center items-center'>
@@ -30,7 +49,7 @@ const Login = () => {
                                 <Link className="label-text-alt link link-hover">Forgot password?</Link>
                             </label>
                         </div>
-                        
+
                         <div className="form-control mt-6">
                             <input type="submit" value="Login" className="btn btn-primary text-white" />
                         </div>
@@ -38,7 +57,7 @@ const Login = () => {
                             <p className='text-center my-3'>New to website <Link to='/register' className='text-secondary font-medium'>create an account</Link></p>
                         </div>
                         <div className="divider my-3">OR</div>
-                        <button className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
+                        <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
                     </form>
                 </div>
             </div>
