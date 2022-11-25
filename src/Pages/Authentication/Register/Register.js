@@ -21,7 +21,7 @@ const Register = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        
+
                     })
                     .catch(e => console.error(e))
             })
@@ -55,6 +55,10 @@ const Register = () => {
                         <div className="form-control">
                             <input {...register("email", { required: true })} type="email" name='email' placeholder="email" className="input input-bordered rounded-none my-3" />
                         </div>
+                        <select {...register("role", { required: true })}  className="select select-bordered mb-2 rounded-none w-full max-w-xs">
+                            <option className='w-full p-3' >Buyer</option>
+                            <option className='w-full p-3'>Seller</option>
+                        </select>
                         <div className="form-control">
                             <input {...register("password", { required: true })} type="password" name='password' placeholder="password" className="input input-bordered rounded-none mb-3" />
                         </div>

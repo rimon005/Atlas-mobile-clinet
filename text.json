@@ -1,0 +1,110 @@
+[
+  {
+    "productName": "Apple 6s",
+    "location": "Dhaka",
+    "categoryId": "01",
+    "categoryName": "Apple",
+    "img": "https://images.pexels.com/photos/4279153/pexels-photo-4279153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "resale-price": "300",
+    "original-price": "400",
+    "yearOfUse": "1 year",
+    "sellerName": "Asif Iqbal Rimon",
+    "description": "2015, September 09. Released 2015, September 25 . 16GB 2GB RAM, 32GB 2GB RAM, 64GB 2GB RAM, 128GB 2GB RAM. Apple Pay (Visa, MasterCard, AMEX certified). Glass front (Corning-made glass), aluminum back, aluminum frame.4K@30fps, 1080p@60fps,1080p@120fps, 720p@240fps. Fingerprint (front-mounted), accelerometer, gyro, proximity, compass, barometerResolution 750 x 1334 pixels, 16:9 ratio (~326 ppi density)Protection Ion-strengthened glass, oleophobic coating"
+  },
+  {
+    "productName": "Apple 7",
+    "location": "Dhaka",
+    "categoryId": "01",
+    "categoryName": "Apple",
+    "img": "https://images.pexels.com/photos/818043/pexels-photo-818043.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "resale-price": "350",
+    "original-price": "700",
+    "yearOfUse": "1 year",
+    "sellerName": "Asif Iqbal Rimon",
+    "description": "Announced : 2016, September 07. Released 2016, September 16 . 138.3 x 67.1 x 7.1 mm (5.44 x 2.64 x 0.28 in) Weight 138 g (4.87 oz) Build Glass front (Corning-made glass), aluminum back aluminum frame SIM Nano-SIM IP67 dust/water resistant (up to 1m for 30 mins) Apple Pay (Visa, MasterCard, AMEX certified) Retina IPS LCD, 625 nits (typ) Size 4.7 inches, 60.9 cm2 (~65.6% screen-to-body ratio) Resolution 750 x 1334 pixels, 16:9 ratio (~326 ppi density) Protection Ion-strengthened glass 3D Touch display & home button "
+  },
+  {
+    "productName": "Apple 14 pro",
+    "location": "Dhaka",
+    "categoryId": "01",
+    "categoryName": "Apple",
+    "img": "https://images.pexels.com/photos/14121456/pexels-photo-14121456.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "resale-price": "900",
+    "original-price": "1200",
+    "yearOfUse": "2 Month",
+    "sellerName": "Tom cruise",
+    "description": "Announced: 2022, September 07 Status Available. Released 2022, September 16. Dimensions 146.7 x 71.5 x 7.8 mm (5.78 x 2.81 x 0.31 in) Weight 172 g (6.07 oz) Build Glass front (Corning-made glass), glass back (Corning-made glass),aluminum frame SIM Nano-SIM and eSIM International Dual eSIM with multiple numbers - USA Dual SIM (Nano-SIM, dual stand-by) - China IP68 dust/water resistant (up to 6m for 30 mins) Apple Pay (Visa, MasterCard, AMEX certified) "
+  },
+  {
+    "productName": "Samsung s22",
+    "location": "Chattogram",
+    "categoryId": "02",
+    "categoryName": "Samsung",
+    "img": "https://images.pexels.com/photos/11420185/pexels-photo-11420185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "resale-price": "900",
+    "original-price": "1200",
+    "yearOfUse": "5 Month",
+    "sellerName": "Al Pacino",
+    "description": "Announced:  2022,February 09 .Dimensions 146 x 70.6 x 7.6 mm (5.75 x 2.78 x 0.30 in) Weight 167 g / 168 g (mmWave) (5.89 oz) Build Glass front (Gorilla Glass Victus+), glass back (Gorilla Glass Victus+), aluminum frame SIM Nano-SIM and eSIM or Dual SIM (2 Nano-SIMs and eSIM, dual stand-by) IP68 dust/water resistant (up to 1.5m for 30 mins)Armor aluminum frame with tougher drop and scratch resistance (advertised). Type Dynamic AMOLED 2X, 120Hz, HDR10+,1300 nits (peak) Size 6.1 inches, 90.1 cm2 (~87.4% screen-to-body ratio)Resolution 1080 x 2340 pixels, 19.5:9 ratio (~425 ppi density) Protection Corning Gorilla Glass Victus+ Always-on display."
+  },
+  {
+    "productName": "Samsung s22 ultra 5g",
+    "location": "Lakshmipur",
+    "categoryId": "02",
+    "categoryName": "Samsung",
+    "img": "https://images.pexels.com/photos/11772524/pexels-photo-11772524.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "resale-price": "800",
+    "original-price": "1400",
+    "yearOfUse": "4 Month",
+    "sellerName": "Robert De Niro",
+    "description": "Announced: 2022, February 09. Dimensions 163.3 x 77.9 x 8.9 mm (6.43 x 3.07 x 0.35 in) Weight 228 g / 229 g (mmWave) (8.04 oz) Build Glass front (Gorilla Glass Victus+), glass back (Gorilla Glass Victus+), aluminum frame SIM Nano-SIM and eSIM or Dual SIM (2 Nano-SIMs and eSIM, dual stand-by) IP68 dust/water resistant (up to 1.5m for 30 mins) Armor aluminum frame with tougher drop and scratch resistance (advertised)Stylus, 2.8ms latency (Bluetooth integration, accelerometer, gyro)"
+  },
+  {
+    "productName": "Samsung s21",
+    "location": "KamalNagor",
+    "categoryId": "02",
+    "categoryName": "Samsung",
+    "img": "https://images.pexels.com/photos/13780425/pexels-photo-13780425.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "resale-price": "600",
+    "original-price": "1000",
+    "yearOfUse": "1 year",
+    "sellerName": "Brad Pitt",
+    "description": "Announced: 2022, January 04 Status: Available. Released 2022, January 07. Dimensions 155.7 x 74.5 x 7.9 mm (6.13 x 2.93 x 0.31 in) Weight177 g 177 (6.24 oz) Build Glass front(Gorilla Glass Victus), plastic back, aluminum frame SIM Single SIM (Nano-SIM) or Dual SIM (Nano-SIM, dual stand-by) IP68 dust/water resistant (up to 1.5m for 30 mins).Type Dynamic AMOLED 2X, 120Hz, HDR10+ Size 6.4 inches, 103.9 cm2 (~89.6% screen-to-body ratio) Resolution 1080 x2400 pixels, 20:9 ratio (~401 ppi density) Protection Corning Gorilla Glass VictusAlways-on display "
+  },
+  {
+    "productName": "Xiaomi note 12 pro 5g",
+    "location": "Dhaka",
+    "categoryId": "03",
+    "categoryName": "Xiaomi",
+    "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/xiaomi-12-pro/pc-section-07bg.jpg",
+    "resale-price": "300",
+    "original-price": "600",
+    "yearOfUse": "1 year",
+    "sellerName": "Angelina Jolie",
+    "description": "Announced: 2022, January 04 Status: Available. Released 2022, January 07. Dimensions 155.7 x 74.5 x 7.9 mm (6.13 x 2.93 x 0.31 in) Weight177 g 177 (6.24 oz) Build Glass front(Gorilla Glass Victus), plastic back, aluminum frame SIM Single SIM (Nano-SIM) or Dual SIM (Nano-SIM, dual stand-by) IP68 dust/water resistant (up to 1.5m for 30 mins).Type Dynamic AMOLED 2X, 120Hz, HDR10+ Size 6.4 inches, 103.9 cm2 (~89.6% screen-to-body ratio) Resolution 1080 x2400 pixels, 20:9 ratio (~401 ppi density) Protection Corning Gorilla Glass VictusAlways-on display "
+  },
+  {
+    "productName": "Xiaomi note 11 pro 5g",
+    "location": "Dhaka",
+    "categoryId": "03",
+    "categoryName": "Xiaomi",
+    "img": "https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-note-11-pro-5g-global/p1.jpg",
+    "resale-price": "300",
+    "original-price": "550",
+    "yearOfUse": "1 year",
+    "sellerName": " Leonardo DiCaprio",
+    "description": "Announced: 2022, January 04 Status: Available. Released 2022, January 07. Dimensions 155.7 x 74.5 x 7.9 mm (6.13 x 2.93 x 0.31 in) Weight177 g 177 (6.24 oz) Build Glass front(Gorilla Glass Victus), plastic back, aluminum frame SIM Single SIM (Nano-SIM) or Dual SIM (Nano-SIM, dual stand-by) IP68 dust/water resistant (up to 1.5m for 30 mins).Type Dynamic AMOLED 2X, 120Hz, HDR10+ Size 6.4 inches, 103.9 cm2 (~89.6% screen-to-body ratio) Resolution 1080 x2400 pixels, 20:9 ratio (~401 ppi density) Protection Corning Gorilla Glass VictusAlways-on display "
+  },
+  {
+    "productName": "Xiaomi note 12T",
+    "location": "Dhaka",
+    "categoryId": "03",
+    "categoryName": "Xiaomi",
+    "img": "https://i02.appmifile.com/mi-com-product/fly-birds/xiaomi-12t/pc/movie-img/cd_27.jpg",
+    "resale-price": "220",
+    "original-price": "400",
+    "yearOfUse": "1 year",
+    "sellerName": "Keanu Reeves",
+    "description": "Announced: 2022, January 04 Status: Available. Released 2022, January 07. Dimensions 155.7 x 74.5 x 7.9 mm (6.13 x 2.93 x 0.31 in) Weight177 g 177 (6.24 oz) Build Glass front(Gorilla Glass Victus), plastic back, aluminum frame SIM Single SIM (Nano-SIM) or Dual SIM (Nano-SIM, dual stand-by) IP68 dust/water resistant (up to 1.5m for 30 mins).Type Dynamic AMOLED 2X, 120Hz, HDR10+ Size 6.4 inches, 103.9 cm2 (~89.6% screen-to-body ratio) Resolution 1080 x2400 pixels, 20:9 ratio (~401 ppi density) Protection Corning Gorilla Glass VictusAlways-on display "
+  }
+]

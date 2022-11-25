@@ -9,12 +9,19 @@ const Navbar = () => {
         .then()
     }
     const menuItems = <>
+        <li><Link className='font-medium'>{user?.displayName}</Link></li>
         <li className='font-medium'><Link to='/'>Home</Link></li>
         <li className='font-medium'><Link>About</Link></li>
         <li className='font-medium'><Link>Products</Link></li>
         <li className='font-medium'><Link>Blog</Link></li>
-        <li className='font-medium'><Link to='/login'>Login</Link></li>
-        <li className='font-medium' onClick={handleLogOut}><Link>LogOut</Link></li>
+        <>
+            {
+                user?.uid  ?
+                <li className='font-medium' onClick={handleLogOut}><Link>LogOut</Link></li>
+                :
+                <li className='font-medium'><Link to='/login'>Login</Link></li>
+            }
+        </>
     </>
     return (
         <div className="navbar bg-base-100">
