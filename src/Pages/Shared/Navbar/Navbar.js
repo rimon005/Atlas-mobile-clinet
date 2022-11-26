@@ -12,7 +12,7 @@ const Navbar = () => {
         <li><Link className='font-medium'>{user?.displayName}</Link></li>
         <li className='font-medium'><Link to='/'>Home</Link></li>
         <li className='font-medium'><Link>About</Link></li>
-        <li className='font-medium'><Link>Products</Link></li>
+        <li className='font-medium'><Link to='/dashboard'>Dashboard</Link></li>
         <li className='font-medium'><Link>Blog</Link></li>
         <>
             {
@@ -40,6 +40,11 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal p-0">
                     {menuItems}
                 </ul>
+            </div>
+            <div className='lg:hidden navbar-end'>
+                <label htmlFor="dashboard-drawer" tabIndex={2} className="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
             </div>
         </div>
     );
