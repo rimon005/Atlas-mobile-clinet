@@ -4,7 +4,7 @@ import BookingModal from './BookingModal';
 import Product from './Product'
 
 const Products = ({ products }) => {
-    console.log(products);
+    // console.log(products);
     const [product, setProduct] = useState(null)
     return (
         <div className='py-12'>
@@ -16,6 +16,7 @@ const Products = ({ products }) => {
             {
                 product &&
                 <BookingModal
+                setProduct={setProduct}
                     product={product}
                 />
             }

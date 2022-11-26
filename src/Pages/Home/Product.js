@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Product = ({product , setProduct}) => {
-    console.log(product);
+    // console.log(product);
     const { img, categoryName, description, location, resale, original, yearOfUse, sellerName, productName, _id } = product
     return (
         <div className="card card-compact rounded-none shadow-xl p-5">

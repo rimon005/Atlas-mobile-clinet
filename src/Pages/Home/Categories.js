@@ -1,17 +1,24 @@
-import { React, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { React, useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/Authprovider/AuthProvider';
 import Products from './Products';
 
 const Categories = () => {
-
+    const { user } = useContext(AuthContext)
     const [products, setProducts] = useState([]);
+    const navigate = useNavigate()
 
     const handleLoadCategoryItem = id => {
-        fetch(`http://localhost:5000/products?categoryId=${id}`)
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data)
-            })
+        if (user) {
+            fetch(`http://localhost:5000/products?categoryId=${id}`)
+                .then(res => res.json())
+                .then(data => {
+                    setProducts(data)
+                })
+        }
+        else{
+            navigate('/login')
+        }
     }
     return (
         <div>
@@ -31,7 +38,7 @@ const Categories = () => {
                     <div className="card-body">
                         <h2 className="card-title mx-auto">Samsung</h2>
                         <div className="card-actions justify-center">
-                            <Link to={`/products/${'02'}`}  onClick={() => handleLoadCategoryItem('02')} className="btn btn-primary">Category Products</Link>
+                            <Link to={`/products/${'02'}`} onClick={() => handleLoadCategoryItem('02')} className="btn btn-primary">Category Products</Link>
                         </div>
                     </div>
                 </div>
@@ -40,13 +47,13 @@ const Categories = () => {
                     <div className="card-body ">
                         <h2 className="card-title mx-auto">Xiaomi</h2>
                         <div className="card-actions justify-center">
-                            <Link to={`/products/${'03'}`}  onClick={() => handleLoadCategoryItem('03')} className="btn btn-primary">Category Products</Link>
+                            <Link to={`/products/${'03'}`} onClick={() => handleLoadCategoryItem('03')} className="btn btn-primary">Category Products</Link>
                         </div>
                     </div>
                 </div>
             </div>
             <Products
-            products={products}
+                products={products}
             />
         </div>
     );
