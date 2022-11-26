@@ -1,14 +1,20 @@
-import { React, useContext } from 'react';
+import { React, useContext , useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import registerImg from '../../../assets/login@4x.png'
 import { AuthContext } from '../../../contexts/Authprovider/AuthProvider';
 import toast from 'react-hot-toast';
+import useToken from '../../../hooks/useToken';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const { user, googleSignIn, createUser, updateUser } = useContext(AuthContext)
-    const navigate = useNavigate();
+    const {  googleSignIn, createUser, updateUser } = useContext(AuthContext);
+    const navigate = useNavigate()
+    const [createdEmail , setCreatedEmail] = useState('');
+    const [token] = useToken(createdEmail);
+    if(token){
+        navigate('/')
+    }
     const handleRegister = data => {
         console.log(data);
         createUser(data.email, data.password)
@@ -21,7 +27,7 @@ const Register = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(data.name , data.email , data.role)
+                        saveUser(data.name , data.email , data.role);
                     })
                     .catch(e => console.error(e))
             })
@@ -35,7 +41,7 @@ const Register = () => {
                 const user = result.user;
                 // console.log(user);
                 const role = 'Buyer';
-                saveUser(user.displayName , user.email , role )
+                saveUser(user.displayName , user.email , role );
             })
             .catch(e => console.error(e))
     }
@@ -54,6 +60,7 @@ const Register = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            setCreatedEmail(email)
         })
         .catch(e => console.error(e))
     }
@@ -73,6 +80,7 @@ const Register = () => {
                         </div>
                         <div className="form-control">
                             <input {...register("email", { required: true })} type="email" name='email' placeholder="email" className="input input-bordered rounded-none my-3" />
+                            {errors.email && <p className='text-red-700'>{errors.email?.message}</p>}
                         </div>
                         <select {...register("role", { required: true })}  className="select select-bordered mb-2 rounded-none w-full max-w-xs">
                             <option className='w-full p-3' >Buyer</option>

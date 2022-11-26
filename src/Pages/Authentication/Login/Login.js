@@ -1,20 +1,29 @@
 import { useForm } from "react-hook-form";
 import loginImg from '../../../assets/login@4x.png'
-import { Link } from 'react-router-dom'
-import { useContext } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useContext , useState} from 'react'
 import { AuthContext } from "../../../contexts/Authprovider/AuthProvider";
+import useToken from "../../../hooks/useToken";
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const { user, googleSignIn , loginUser} =  useContext(AuthContext)
-
+    const { googleSignIn , loginUser} =  useContext(AuthContext);
+    const [signInEmail , setSignInEmail] = useState('')
+    const location = useLocation()
+    const navigate = useNavigate();
+    const from = location?.state?.from?.pathname || '/';
+    const [token] = useToken(signInEmail);
+    if(token){
+        navigate(from , {replace: true})
+    }
     const handleLogin = data => {
         // console.log(data)
         loginUser(data.email , data.password)
         .then(result => {
             const user = result.user;
             console.log(user);
+            setSignInEmail(data.email)
         })
         .catch(e => console.error(e))
     }
@@ -24,6 +33,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setSignInEmail(user.email);
             })
             .catch(e => console.error(e))
     }
