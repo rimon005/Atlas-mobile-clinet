@@ -1,5 +1,5 @@
 import {React , useContext} from 'react';
-import { AuthContext } from '../../../contexts/Authprovider/AuthProvider';
+import { AuthContext } from '../../contexts/Authprovider/AuthProvider';
 
 const BookingModal = ({product}) => {
     const {productName , resale} = product
