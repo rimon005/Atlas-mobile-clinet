@@ -25,7 +25,7 @@ const BookingModal = ({product}) => {
         <>
             <input type="checkbox" id="booking-modal" className="modal-toggle" />
             <div className="modal">
-                <div className="modal-box relative">
+                <div className="modal-box relative rounded-none">
                     <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <form onSubmit={handleSubmit} className='grid grid-cols-1 gap-5 mt-10'>
                         <input name='userName' type="text" defaultValue={user?.displayName} disabled placeholder="Your Name" className="input input-bordered input-success w-full rounded-none" />

@@ -21,7 +21,7 @@ const Register = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-
+                        saveUser(data.name , data.email , data.role)
                     })
                     .catch(e => console.error(e))
             })
@@ -33,11 +33,30 @@ const Register = () => {
         googleSignIn()
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
+                const role = 'Buyer';
+                saveUser(user.displayName , user.email , role )
             })
             .catch(e => console.error(e))
     }
 
+    const saveUser = (name , email , role) => {
+        const user = {
+            name , email , role
+        }
+        fetch('http://localhost:5000/users' , {
+            method:"POST" ,
+            headers : {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(e => console.error(e))
+    }
 
 
     return (
