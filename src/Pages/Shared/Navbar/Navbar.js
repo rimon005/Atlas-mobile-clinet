@@ -9,7 +9,6 @@ const Navbar = () => {
             .then()
     }
     const menuItems = <>
-        <li><Link className='font-medium'>{user?.displayName}</Link></li>
         <li className='font-medium'><Link to='/'>Home</Link></li>
         <li className='font-medium'><Link>About</Link></li>
 

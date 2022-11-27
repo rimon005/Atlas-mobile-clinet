@@ -31,6 +31,24 @@ const AllSeller = () => {
 
     }
 
+    const handleDelete = id => {
+        // console.log(id);
+        const proceed = window.confirm("Are you sure, you want to delete this user")
+        if (proceed) {
+            fetch(`http://localhost:5000/users/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    refetch();
+                })
+        }
+    }
+
     return (
         <div>
             <h2 className="text-3xl text-secondary"> All Seller</h2>
@@ -54,7 +72,7 @@ const AllSeller = () => {
                                 <td>{user?.email}</td>
                                 <td>{<button onClick={() => handleMakeAdmin(user?._id)} className='btn btn-xs  text-white btn-secondary rounded-none'>Make Admin</button>}</td>
                                 <td><button className='btn btn-xs  text-white btn-error rounded-none'>Make Verify</button></td>
-                                <td><button className='btn btn-xs  text-white btn-error rounded-none'>Delete</button></td>
+                                <td><button onClick={() => handleDelete(user?._id)} className='btn btn-xs  text-white btn-error rounded-none'>Delete</button></td>
                             </tr>)
                         }
                     </tbody>

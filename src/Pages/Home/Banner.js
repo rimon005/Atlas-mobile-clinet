@@ -11,14 +11,14 @@ const Banner = () => {
                     <img alt='' src={img1} className="w-full rounded-xl" />
                 </div>
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-24 top-1/4">
-                    <h1 className='text-white text-5xl font-bold banner-heading'>
+                    <h1 className='text-white lg:text-5xl font-bold banner-heading'>
                         SELL YOUR SMART  <br />
                         <span className='mr-2' style={{color:'#00A4CF'}}>PHONE FOR</span>
                          QUICK CASH
                     </h1>
                 </div>
                 <div className="w-1/2 absolute flex justify-end transform -translate-y-1/2 left-24 top-1/2">
-                    <p className='text-xl text-white'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+                    <p className='lg:text-xl text-white'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                 </div>
                 <div className="w-1/2 absolute flex justify-start transform -translate-y-1/2 left-24 top-3/4">
                     <button className="btn btn-primary rounded-none mr-5 border-none "  style={{background:'#00A4CF'}}>Buy Now</button>
@@ -33,13 +33,13 @@ const Banner = () => {
                     <img alt='' src={img2} className="w-full rounded-xl" />
                 </div>
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-24 top-1/4">
-                    <h1 className='text-white text-5xl font-bold banner-heading'>
+                    <h1 className='text-white lg:text-5xl font-bold banner-heading'>
                         SELL YOUR SMART  <br />
                         <span className='mr-2' style={{color:'#00A4CF'}}>PHONE FOR</span>QUICK CASH
                     </h1>
                 </div>
                 <div className="w-1/2 absolute flex justify-end transform -translate-y-1/2 left-24 top-1/2">
-                    <p className='text-xl text-white'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
+                    <p className='lg:text-xl text-white'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                 </div>
                 <div className="w-1/2 absolute flex justify-start transform -translate-y-1/2 left-24 top-3/4">
                     <button className="btn  rounded-none mr-5 border-none" style={{background:'#00A4CF'}}>Buy Now</button>
