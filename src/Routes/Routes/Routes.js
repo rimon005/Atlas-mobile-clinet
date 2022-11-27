@@ -10,6 +10,8 @@ import MyBookings from "../../Pages/Dashboard/MyBookings/MyBookings";
 import Categories from "../../Pages/Home/Categories";
 import Home from "../../Pages/Home/Home";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
+import AdminRoute from '../AdminRoute/AdminRoute'
+import Payment from "../../Pages/Dashboard/Payment/Payment";
 
 const router = createBrowserRouter([
     {
@@ -45,15 +47,20 @@ const router = createBrowserRouter([
             },
             {
                 path:'/dashboard/alladmin',
-                element: <AllAdmin />
+                element: <AdminRoute><AllAdmin /></AdminRoute>
             },
             {
                 path:'/dashboard/allbuyer' , 
-                element: <AllBuyer />
+                element:<AdminRoute><AllBuyer /></AdminRoute>
             },
             {
                 path:'/dashboard/allseller',
-                element: <AllSeller />
+                element: <AdminRoute><AllSeller /></AdminRoute>
+            }, 
+            {
+                path:'/dashboard/payment/:id',
+                element:<Payment />,
+                loader: ({params}) => fetch(`http://localhost:5000/bookings/${params.id}`)
             }
         ]
     }

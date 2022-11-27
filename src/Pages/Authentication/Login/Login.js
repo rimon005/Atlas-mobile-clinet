@@ -9,8 +9,9 @@ const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const { googleSignIn , loginUser} =  useContext(AuthContext);
+    const [loginError , setLoginError] = useState('')
     const [signInEmail , setSignInEmail] = useState('')
-    const location = useLocation()
+    const location = useLocation();
     const navigate = useNavigate();
     const from = location?.state?.from?.pathname || '/';
     const [token] = useToken(signInEmail);
@@ -22,7 +23,7 @@ const Login = () => {
         loginUser(data.email , data.password)
         .then(result => {
             const user = result.user;
-            console.log(user);
+            console.log(data.email);
             setSignInEmail(data.email)
         })
         .catch(e => console.error(e))
@@ -32,12 +33,13 @@ const Login = () => {
         googleSignIn()
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                console.log(user.email);
                 setSignInEmail(user.email);
             })
-            .catch(e => console.error(e))
+            .catch(e => {
+                setLoginError(e.message)
+                console.error(e)})
     }
-
 
     return (
         <div className='h-[800px] flex justify-center items-center'>
@@ -59,7 +61,9 @@ const Login = () => {
                                 <Link className="label-text-alt link link-hover">Forgot password?</Link>
                             </label>
                         </div>
-
+                        <div>
+                            {loginError && <p className='text-red-700'>{loginError}</p>}
+                        </div>
                         <div className="form-control mt-6">
                             <input type="submit" value="Login" className="btn btn-primary text-white" />
                         </div>

@@ -1,25 +1,29 @@
-import {React , useContext} from 'react';
+import { React, useContext } from 'react';
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../../contexts/Authprovider/AuthProvider';
 
 const Navbar = () => {
-    const {user , logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
         logOut()
-        .then()
+            .then()
     }
     const menuItems = <>
         <li><Link className='font-medium'>{user?.displayName}</Link></li>
         <li className='font-medium'><Link to='/'>Home</Link></li>
         <li className='font-medium'><Link>About</Link></li>
-        <li className='font-medium'><Link to='/dashboard'>Dashboard</Link></li>
+
         <li className='font-medium'><Link>Blog</Link></li>
         <>
             {
-                user?.uid  ?
-                <li className='font-medium' onClick={handleLogOut}><Link>LogOut</Link></li>
-                :
-                <li className='font-medium'><Link to='/login'>Login</Link></li>
+                user?.uid ?
+                    <>
+                        <li className='font-medium'><Link to='/dashboard'>Dashboard</Link></li>
+                        <li className='font-medium' onClick={handleLogOut}><Link>LogOut</Link></li>
+                    </>
+
+                    :
+                    <li className='font-medium'><Link to='/login'>Login</Link></li>
             }
         </>
     </>
@@ -34,7 +38,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-xl">Atlas Mobile</Link>
+                <Link to='/' className="btn btn-ghost normal-case text-xl">Atlas Mobile</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

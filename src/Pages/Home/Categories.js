@@ -8,9 +8,9 @@ const Categories = () => {
     const [products, setProducts] = useState([]);
     const navigate = useNavigate()
 
-    const handleLoadCategoryItem = id => {
+    const handleLoadCategoryItem = name => {
         if (user) {
-            fetch(`http://localhost:5000/products?categoryId=${id}`)
+            fetch(`http://localhost:5000/products?categoryName=${name}`)
                 .then(res => res.json())
                 .then(data => {
                     setProducts(data)
@@ -29,7 +29,7 @@ const Categories = () => {
                     <div className="card-body ">
                         <h2 className="card-title mx-auto">Apple</h2>
                         <div className="card-actions justify-center">
-                            <Link to={`/products/${'01'}`} onClick={() => handleLoadCategoryItem('01')} className="btn btn-primary">Category Products</Link>
+                            <Link to={`/products/${'apple'}`} onClick={() => handleLoadCategoryItem('Apple')} className="btn btn-primary">Category Products</Link>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ const Categories = () => {
                     <div className="card-body">
                         <h2 className="card-title mx-auto">Samsung</h2>
                         <div className="card-actions justify-center">
-                            <Link to={`/products/${'02'}`} onClick={() => handleLoadCategoryItem('02')} className="btn btn-primary">Category Products</Link>
+                            <Link to={`/products/${'samsung'}`} onClick={() => handleLoadCategoryItem('Samsung')} className="btn btn-primary">Category Products</Link>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ const Categories = () => {
                     <div className="card-body ">
                         <h2 className="card-title mx-auto">Xiaomi</h2>
                         <div className="card-actions justify-center">
-                            <Link to={`/products/${'03'}`} onClick={() => handleLoadCategoryItem('03')} className="btn btn-primary">Category Products</Link>
+                            <Link to={`/products/${'xiaomi'}`} onClick={() => handleLoadCategoryItem('Xiaomi')} className="btn btn-primary">Category Products</Link>
                         </div>
                     </div>
                 </div>
