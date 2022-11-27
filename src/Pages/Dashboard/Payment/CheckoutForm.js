@@ -2,7 +2,7 @@ import { React, useState , useEffect } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 
 const CheckoutForm = ({ data }) => {
-    const { userName, productName, email, productPrice , _id } = data;
+    const { userName, email, productPrice , _id } = data;
     const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState('');

@@ -12,6 +12,9 @@ import Home from "../../Pages/Home/Home";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import AdminRoute from '../AdminRoute/AdminRoute'
 import Payment from "../../Pages/Dashboard/Payment/Payment";
+import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
+import Blog from "../../Pages/Blog/Blog";
+import NotFoundPage from "../../Pages/NotFoundPage/NotFoundPage";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +24,10 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home />
+            },
+            {
+                path:'/blog',
+                element: <Blog />
             },
             {
                 path:'/products/:id' , 
@@ -34,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path:'/register',
                 element:<Register />
+            },
+            {
+                path:'*',
+                element:<NotFoundPage />
             }
         ]
     },
@@ -44,6 +55,10 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard',
                 element: <MyBookings />
+            },
+            {
+                path:'/dashboard/addproduct',
+                element: <AddProduct />
             },
             {
                 path:'/dashboard/alladmin',
