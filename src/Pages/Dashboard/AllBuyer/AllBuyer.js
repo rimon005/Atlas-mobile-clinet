@@ -7,7 +7,7 @@ const AllBuyer = () => {
     const { data: users = [], isLoading, refetch } = useQuery({
         queryKey: ['uses'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users?role=Buyer');
+            const res = await fetch('https://atlas-mobile-server.vercel.app/users?role=Buyer');
             const data = await res.json();
             return data
         }
@@ -18,7 +18,7 @@ const AllBuyer = () => {
     }
 
     const handleMakeAdmin = id => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
+        fetch(`https://atlas-mobile-server.vercel.app/users/admin/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -35,7 +35,7 @@ const AllBuyer = () => {
         // console.log(id);
         const proceed = window.confirm("Are you sure, you want to delete this user")
         if (proceed) {
-            fetch(`http://localhost:5000/users/${id}`, {
+            fetch(`https://atlas-mobile-server.vercel.app/users/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`

@@ -6,7 +6,7 @@ import Loading from '../../Shared/Loading/Loading';
 
 const MyBookings = () => {
     const {user} = useContext(AuthContext);
-    const url = `http://localhost:5000/bookings?email=${user?.email}`
+    const url = `https://atlas-mobile-server.vercel.app/bookings?email=${user?.email}`
     const { data : bookings = [] , isLoading} = useQuery({
         queryKey : ['bookings'],
         queryFn : async () => {
@@ -38,7 +38,7 @@ const MyBookings = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {
+                    {   bookings.length && 
                         bookings?.map((booking, i) => <tr key={booking._id}>
                             <th>{i + 1}</th>
                             <td>{booking?.userName}</td>

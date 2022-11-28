@@ -6,7 +6,7 @@ const AllAdmin = () => {
     const { data: users = [], isLoading } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users?role=admin');
+            const res = await fetch('https://atlas-mobile-server.vercel.app/users?role=admin');
             const data = await res.json();
             return data;
         }

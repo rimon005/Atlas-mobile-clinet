@@ -1,3 +1,11 @@
+adminEmail: lajis35225@hempyl.com
+
+adminPassword: 112233
+
+### install reac
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

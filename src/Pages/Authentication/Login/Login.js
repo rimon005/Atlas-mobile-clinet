@@ -19,21 +19,20 @@ const Login = () => {
         navigate(from , {replace: true})
     }
     const handleLogin = data => {
-        // console.log(data)
         loginUser(data.email , data.password)
         .then(result => {
             const user = result.user;
-            console.log(data.email);
             setSignInEmail(data.email)
         })
-        .catch(e => console.error(e))
+        .catch(e => {
+            setLoginError(e.message)
+            console.error(e)})
     }
 
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {
                 const user = result.user;
-                console.log(user.email);
                 setSignInEmail(user.email);
             })
             .catch(e => {

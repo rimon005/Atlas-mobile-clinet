@@ -1,10 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import BookingModal from './BookingModal';
 import Product from './Product'
 
-const Products = ({ products }) => {
-    // console.log(products);
+const Products = () => {
+    const products = useLoaderData();
     const [product, setProduct] = useState(null)
     return (
         <div className='py-12'>

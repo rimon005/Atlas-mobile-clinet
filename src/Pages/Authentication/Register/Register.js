@@ -50,7 +50,7 @@ const Register = () => {
         const user = {
             name , email , role
         }
-        fetch('http://localhost:5000/users' , {
+        fetch('https://atlas-mobile-server.vercel.app/users' , {
             method:"POST" ,
             headers : {
                 'content-type' : 'application/json'

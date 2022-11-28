@@ -7,7 +7,6 @@ import AllAdmin from "../../Pages/Dashboard/AllAdmin/AllAdmin";
 import AllBuyer from "../../Pages/Dashboard/AllBuyer/AllBuyer";
 import AllSeller from "../../Pages/Dashboard/AllSeller/AllSeller";
 import MyBookings from "../../Pages/Dashboard/MyBookings/MyBookings";
-import Categories from "../../Pages/Home/Categories";
 import Home from "../../Pages/Home/Home";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import AdminRoute from '../AdminRoute/AdminRoute'
@@ -15,6 +14,7 @@ import Payment from "../../Pages/Dashboard/Payment/Payment";
 import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import Blog from "../../Pages/Blog/Blog";
 import NotFoundPage from "../../Pages/NotFoundPage/NotFoundPage";
+import Products from "../../Pages/Home/Products";
 
 const router = createBrowserRouter([
     {
@@ -30,9 +30,9 @@ const router = createBrowserRouter([
                 element: <Blog />
             },
             {
-                path:'/products/:id' , 
-                element:<PrivetRoute><Categories /></PrivetRoute>,
-                loader : ({params}) => fetch(`http://localhost:5000/products?categoryId=${params.id}`)
+                path:'/products/:name' , 
+                element:<PrivetRoute><Products /></PrivetRoute>,
+                loader : ({params}) => fetch(`https://atlas-mobile-server.vercel.app/products?categoryName=${params.name}`)
             },
             {
                 path:'/login',
@@ -75,7 +75,7 @@ const router = createBrowserRouter([
             {
                 path:'/dashboard/payment/:id',
                 element:<Payment />,
-                loader: ({params}) => fetch(`http://localhost:5000/bookings/${params.id}`)
+                loader: ({params}) => fetch(`https://atlas-mobile-server.vercel.app/bookings/${params.id}`)
             }
         ]
     }

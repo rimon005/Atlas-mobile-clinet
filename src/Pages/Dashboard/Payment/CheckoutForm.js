@@ -1,20 +1,22 @@
 import { React, useState , useEffect } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import { useNavigate } from 'react-router-dom';
 
 const CheckoutForm = ({ data }) => {
-    const { userName, email, productPrice , _id } = data;
+    const { userName, email, productPrice , _id  , productId} = data;
     const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState('');
     const [processing, setProcessing] = useState(false);
     const [success , setSuccess] = useState('');
     const [clientSecret , setClientSecret] = useState('')
-    const [transactionId , setTransactionId] = useState('')
+    const [transactionId , setTransactionId] = useState('');
+    const navigate = useNavigate()
 
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://atlas-mobile-server.vercel.app/create-payment-intent", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -74,10 +76,11 @@ const CheckoutForm = ({ data }) => {
                 productPrice ,
                 bookingId : _id,
                 email ,
+                productId,
                 transactionId : paymentIntent.id
             }
 
-            fetch('http://localhost:5000/payments', {
+            fetch('https://atlas-mobile-server.vercel.app/payments', {
                 method: 'POST',
                 headers : {
                     'content-type' : 'application/json',
@@ -89,7 +92,8 @@ const CheckoutForm = ({ data }) => {
             .then(data => {
                 if(data.insertedId){
                     setSuccess('Congrats! Your payment complete')
-                    setTransactionId(paymentIntent.id)
+                    setTransactionId(paymentIntent.id);
+                    // navigate('/dashboard')
                 }
             })
         }

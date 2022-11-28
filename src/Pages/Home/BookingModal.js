@@ -1,10 +1,9 @@
-import { async } from '@firebase/util';
 import {React , useContext} from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../contexts/Authprovider/AuthProvider';
 
 const BookingModal = ({product , setProduct}) => {
-    const {productName , resale} = product
+    const {productName , resale , _id} = product
     const {user } = useContext(AuthContext)
     const handleSubmit = event => {
         event.preventDefault();
@@ -19,10 +18,11 @@ const BookingModal = ({product , setProduct}) => {
             email,
             productName,
             productPrice,
-            phone
+            phone,
+            productId : _id
         }
         console.log(booking);
-        fetch('http://localhost:5000/bookings' , {
+        fetch('https://atlas-mobile-server.vercel.app/bookings' , {
             method: "POST" , 
             headers : {
                 'content-type' : 'application/json'

@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51M6oi4JhS5lUgelV9oqkNeT657SjSO22t9qpe
 const Payment = () => {
     const data = useLoaderData();
     console.log(data);
-    const {productName , productPrice} = data
+    const {productName , productPrice } = data
     return (
         <div>
             <h2 className='text-xl font-medium mb-2'>Payment for {productName}</h2>
