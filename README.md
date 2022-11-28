@@ -2,7 +2,19 @@ adminEmail: lajis35225@hempyl.com
 
 adminPassword: 112233
 
-### install reac
+### install react-router-dom 
+### firebase daisy ui , tripe ,
+### login and register user
+### add payment method
+### booked any phone
+### admin dashboard 
+### seller add  can add a product
+
+
+
+
+
+
 
 
 
